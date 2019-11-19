@@ -74,15 +74,35 @@ var visualization = d3plus
   .axes({ ticks: false })
   .draw();
 
+
+var data2 = [
+  { year: 1991, name: "alpha", value: 15, size: 2},
+  { year: 1992, name: "alpha", value: 34, size: 1},
+  { year: 1991, name: "alpha2", value: 17, size: 3},
+  { year: 1992, name: "alpha2", value: 65, size: 14},
+  { year: 1991, name: "beta", value: 10, size: 7},
+  { year: 1992, name: "beta", value: 10, size: 2},
+  { year: 1991, name: "beta2", value: 40, size: 4},
+  { year: 1992, name: "beta2", value: 38, size: 8},
+  { year: 1991, name: "gamma", value: 5, size: 16},
+  { year: 1992, name: "gamma", value: 10, size: 5},
+  { year: 1991, name: "gamma2", value: 20, size: 2},
+  { year: 1992, name: "gamma2", value: 34, size: 1},
+  { year: 1991, name: "delta", value: 50, size: 14},
+  { year: 1992, name: "delta", value: 43, size: 5},
+  { year: 1991, name: "delta2", value: 17, size: 16},
+  { year: 1992, name: "delta2", value: 35, size: 9}
+];
+
 var visualization = d3plus
   .viz()
   .container("#viz4")
-  .data(data1)
+  .data(data2)
   .type("chart")
-  .size("value")
-  .id(["year","name"])
-  .depth(1)
+  .size("size")
+  .id("name")
   .x("year")
   .y("value")
+  .time("year")
   .axes({ ticks: false })
   .draw();
